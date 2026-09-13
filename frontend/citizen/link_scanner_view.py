@@ -50,7 +50,7 @@ def render() -> None:
                         <span style="font-family: 'Electrolize', sans-serif; font-weight: 700; color: #ffffff;">{score_pct}% RISK</span>
                     </div>
                     <div class="threat-bar-container" style="height: 6px; margin-bottom: 0.75rem;">
-                        <div style="width: {score_pct}%; height: 100%; background: #a3a3a3;"></div>
+                        <div style="{theme.threat_bar_style(score_pct)} height: 100%;"></div>
                     </div>
                     <div style="font-size: 0.85rem; color: #a3a3a3;">{result.get("safety_guidance", "")}</div>
                 </div>
@@ -66,7 +66,7 @@ def render() -> None:
                         <span style="font-family: 'Electrolize', sans-serif; font-weight: 900; color: #ffffff;">{score_pct}% PROBABILITY</span>
                     </div>
                     <div class="threat-bar-container" style="height: 8px; margin-bottom: 0.75rem;">
-                        <div class="threat-bar-fill" style="width: {score_pct}%;"></div>
+                        <div class="threat-bar-fill" style="{theme.threat_bar_style(score_pct)}"></div>
                     </div>
                     <div style="font-size: 0.82rem; font-weight: 800; margin-bottom: 0.35rem; color: #ffffff;">[!] FLAGGED THREAT INDICATORS:</div>
                     <ul style="font-size: 0.8rem; color: #d4d4d4; padding-left: 1.25rem;">{factors}</ul>

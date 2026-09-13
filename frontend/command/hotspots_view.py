@@ -36,9 +36,11 @@ def render() -> None:
         st.markdown(
             """
             <div style="display: flex; gap: 1rem; justify-content: flex-end; align-items: center; height: 100%; font-size: 0.74rem; font-family: 'Electrolize', sans-serif;">
-                <span style="color: #ffffff; font-weight: 900;">■ HIGH THREAT (>70%)</span>
-                <span style="color: #a3a3a3; font-weight: 600;">■ WATCH ZONE (40-70%)</span>
-                <span style="color: #525252; font-weight: 500;">■ BASELINE (<40%)</span>
+                <span style="color: #FFFFFF; font-weight: 500;">■ NO RISK</span>
+                <span style="color: #F2C94C; font-weight: 600;">■ LOW</span>
+                <span style="color: #F2994A; font-weight: 600;">■ HIGH</span>
+                <span style="color: #D64545; font-weight: 700;">■ SEVERE</span>
+                <span style="color: #000000; font-weight: 900;">■ URGENT</span>
             </div>
             """,
             unsafe_allow_html=True,
@@ -65,8 +67,6 @@ def render() -> None:
     """
     fmap.get_root().header.add_child(folium.Element(dark_map_css))
 
-    colors = {"HIGH": "#ffffff", "WATCH": "#a3a3a3", "NORMAL": "#404040"}
-
     for cell in hotspots:
         prob = cell.get("probability_pct", 0)
         lat, lon = cell.get("center_lat"), cell.get("center_lon")
@@ -79,7 +79,7 @@ def render() -> None:
             f"<small style='color: #a3a3a3;'>{cell.get('reason_text', '')}</small></div>"
         )
         boundary = h3_to_geo_boundary_safe(cell.get("h3_index", ""))
-        tier_color = colors.get(cell.get("risk_tier"), "#404040")
+        tier_color = theme.threat_color(prob)
         fill_op = 0.65 if cell.get("risk_tier") == "HIGH" else (0.35 if cell.get("risk_tier") == "WATCH" else 0.15)
         line_w = 2 if cell.get("risk_tier") == "HIGH" else 1
 

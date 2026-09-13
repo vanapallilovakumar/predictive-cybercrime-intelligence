@@ -54,7 +54,7 @@ def render() -> None:
                             Threat Velocity Meter
                         </div>
                         <div class="threat-bar-container" style="height: 8px; margin-top: 0.2rem;">
-                            <div class="threat-bar-fill" style="width: {prob}%;"></div>
+                            <div class="threat-bar-fill" style="{theme.threat_bar_style(prob)}"></div>
                         </div>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; font-size: 0.8rem;">

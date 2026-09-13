@@ -72,16 +72,16 @@ def render() -> None:
                         x=hours,
                         y=cashouts,
                         marker=dict(
-                            color="#ffffff",
-                            line=dict(color="#ffffff", width=1),
+                            color=theme.ACCENT,
+                            line=dict(color=theme.ACCENT, width=1),
                         ),
                         hovertemplate="<b>Hour %{x}</b><br>Predicted Cash-Outs: %{y}<extra></extra>",
                     )
                 ]
             )
             fig.update_layout(
-                plot_bgcolor="#000000",
-                paper_bgcolor="#000000",
+                plot_bgcolor=theme.BG_PANEL,
+                paper_bgcolor=theme.BG_PANEL,
                 margin=dict(l=10, r=10, t=15, b=10),
                 height=165,
                 xaxis=dict(
@@ -177,7 +177,7 @@ def render() -> None:
                             <span style="color: #a3a3a3; font-weight: 600;">{prob}% PROBABILITY</span>
                         </div>
                         <div class="threat-bar-container">
-                            <div class="threat-bar-fill" style="width: {prob}%;"></div>
+                            <div class="threat-bar-fill" style="{theme.threat_bar_style(prob)}"></div>
                         </div>
                     </div>
                     <div>
@@ -212,7 +212,7 @@ def render() -> None:
                         <span style="font-family: 'Electrolize', sans-serif; color: #ffffff; font-weight: 800;">{d_prob}%</span>
                     </div>
                     <div class="threat-bar-container" style="height: 6px;">
-                        <div class="threat-bar-fill" style="width: {d_prob}%;"></div>
+                        <div class="threat-bar-fill" style="{theme.threat_bar_style(d_prob)}"></div>
                     </div>
                 </div>
                 """,
