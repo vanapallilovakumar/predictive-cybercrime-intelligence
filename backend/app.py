@@ -19,9 +19,9 @@ from backend.cyber_safely import scanner
 from backend.cyber_safely.guidance import GOLDEN_HOUR_ADVISORY, TYPOLOGY_GUIDANCE
 
 app = FastAPI(
-    title="PRAHARI & Cyber Safely Intelligence API",
+    title="Prahari • Cyber Saver API",
     version="2.0.0",
-    description="Predictive Cybercrime Cash-Out Forecasting & Citizen Protection API (SIH26184)"
+    description="Prahari • Cyber Saver Predictive Intelligence API (SIH26184)"
 )
 
 app.add_middleware(
@@ -35,7 +35,7 @@ app.add_middleware(
 @app.get("/")
 def read_root():
     return {
-        "message": "Welcome to PRAHARI API",
+        "message": "Welcome to Prahari API - Cyber Saver",
         "docs_url": "/docs",
         "health_check": "/health"
     }
@@ -44,7 +44,7 @@ def read_root():
 def health_check():
     return {
         "status": "online",
-        "service": "PRAHARI Predictive Cyber Command Engine",
+        "service": "Prahari • Cyber Saver Engine",
         "version": "2.0.0",
         "has_supabase": settings.has_supabase,
         "mock_auth": settings.MOCK_AUTH
