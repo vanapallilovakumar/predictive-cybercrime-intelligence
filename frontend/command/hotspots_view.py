@@ -50,7 +50,20 @@ def render() -> None:
         return
 
     center = [hotspots[0].get("center_lat", 24.2), hotspots[0].get("center_lon", 86.6)]
-    fmap = folium.Map(location=center, zoom_start=7, tiles="CartoDB dark_matter")
+    fmap = folium.Map(location=center, zoom_start=7, tiles="OpenStreetMap")
+
+    # Invert and darken OpenStreetMap tiles for 100% free, dark HUD styling with NO API key required
+    dark_map_css = """
+    <style>
+    .leaflet-tile {
+        filter: grayscale(100%) invert(100%) contrast(140%) brightness(75%) !important;
+    }
+    .leaflet-container {
+        background: #000000 !important;
+    }
+    </style>
+    """
+    fmap.get_root().header.add_child(folium.Element(dark_map_css))
 
     colors = {"HIGH": "#ffffff", "WATCH": "#a3a3a3", "NORMAL": "#404040"}
 
