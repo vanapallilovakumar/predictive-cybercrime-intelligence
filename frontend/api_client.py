@@ -1,10 +1,11 @@
 import json
+import os
 from pathlib import Path
 from typing import Any, Dict, Optional
 
 import requests
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = os.getenv("BACKEND_API_URL", "http://127.0.0.1:8000")
 _DATA_PATH = Path(__file__).resolve().parents[1] / "backend" / "data" / "mock_scenarios.json"
 
 
