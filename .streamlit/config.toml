@@ -5,10 +5,10 @@ enableXsrfProtection = false
 
 [theme]
 base = "dark"
-backgroundColor = "#0d111a"
-secondaryBackgroundColor = "#131824"
-textColor = "#f8fafc"
-primaryColor = "#e11d48"
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#060911"
+textColor = "#ffffff"
+primaryColor = "#00f0ff"
 font = "sans serif"
 
 [browser]

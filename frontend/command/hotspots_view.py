@@ -52,7 +52,7 @@ def render() -> None:
     center = [hotspots[0].get("center_lat", 24.2), hotspots[0].get("center_lon", 86.6)]
     fmap = folium.Map(location=center, zoom_start=7, tiles="CartoDB dark_matter")
 
-    colors = {"HIGH": "#e11d48", "WATCH": "#f97316", "NORMAL": "#475569"}
+    colors = {"HIGH": "#ff8800", "WATCH": "#00f0ff", "NORMAL": "#334155"}
 
     for cell in hotspots:
         prob = cell.get("probability_pct", 0)
