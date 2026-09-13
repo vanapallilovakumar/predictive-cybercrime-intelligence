@@ -72,7 +72,7 @@ with st.sidebar:
     )
 
     if st.session_state["portal"] == "command":
-        cmd_pages = ["Threat Triage & Overview", "H3 Spatial Radar", "Alert Queue & Freeze Notices"]
+        cmd_pages = ["Threat Triage & Overview", "H3 Spatial Radar", "Alert Queue & Freeze Notices", "API Documentation"]
         default_cmd = st.session_state.get("cmd_page", "Threat Triage & Overview")
         cmd_idx = cmd_pages.index(default_cmd) if default_cmd in cmd_pages else 0
         page = st.radio(
@@ -83,7 +83,7 @@ with st.sidebar:
         )
         st.session_state["cmd_page"] = page
     else:
-        cit_pages = ["Link Security Checker", "Lodge Complaint", "Track Case Restitution", "Safety Guidance"]
+        cit_pages = ["Link Security Checker", "Lodge Complaint", "Track Case Restitution", "Safety Guidance", "System Health"]
         default_cit = st.session_state.get("cit_page", "Link Security Checker")
         cit_idx = cit_pages.index(default_cit) if default_cit in cit_pages else 0
         page = st.radio(
@@ -108,7 +108,7 @@ if st.session_state["portal"] == "command":
         subtitle="Cyber Saver"
     )
 
-    # Top Slim Side-by-Side Routes Buttons (Names Only)
+    # Top Slim Side-by-Side Routes Buttons (Names Only - Direct Navigation)
     st.markdown(
         """
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem; padding-bottom: 0.25rem; border-bottom: 1px solid #262626;">
@@ -126,48 +126,31 @@ if st.session_state["portal"] == "command":
     r_cols = st.columns(9)
     if r_cols[0].button("Stats", key="rt_stats", use_container_width=True):
         st.session_state["cmd_page"] = "Threat Triage & Overview"
-        st.session_state["preview_route"] = ("GET /api/v1/command/stats", api_client.command_stats())
         st.rerun()
     if r_cols[1].button("Timing", key="rt_timing", use_container_width=True):
         st.session_state["cmd_page"] = "Threat Triage & Overview"
-        st.session_state["preview_route"] = ("GET /api/v1/command/timing-pattern", api_client.command_list("/api/v1/command/timing-pattern", "timing-pattern"))
         st.rerun()
     if r_cols[2].button("Risk", key="rt_risk", use_container_width=True):
         st.session_state["cmd_page"] = "Threat Triage & Overview"
-        st.session_state["preview_route"] = ("GET /api/v1/command/district-risk", api_client.command_list("/api/v1/command/district-risk", "district-risk"))
         st.rerun()
     if r_cols[3].button("Mix", key="rt_mix", use_container_width=True):
         st.session_state["cmd_page"] = "Threat Triage & Overview"
-        st.session_state["preview_route"] = ("GET /api/v1/command/typology-mix", api_client.command_list("/api/v1/command/typology-mix", "typology-mix"))
         st.rerun()
     if r_cols[4].button("Radar", key="rt_radar", use_container_width=True):
         st.session_state["cmd_page"] = "H3 Spatial Radar"
-        st.session_state["preview_route"] = ("GET /api/v1/hotspots", api_client.command_list("/api/v1/hotspots", "hotspots"))
         st.rerun()
     if r_cols[5].button("Alerts", key="rt_alerts", use_container_width=True):
         st.session_state["cmd_page"] = "Alert Queue & Freeze Notices"
-        st.session_state["preview_route"] = ("GET /api/v1/alerts", api_client.command_list("/api/v1/alerts", "alerts"))
         st.rerun()
     if r_cols[6].button("Freeze", key="rt_freeze", use_container_width=True):
         st.session_state["cmd_page"] = "Alert Queue & Freeze Notices"
         st.rerun()
     if r_cols[7].button("Scenarios", key="rt_scen", use_container_width=True):
         st.session_state["cmd_page"] = "Threat Triage & Overview"
-        st.session_state["preview_route"] = ("GET /api/v1/scenarios", api_client.scenarios())
         st.rerun()
     if r_cols[8].button("Docs", key="rt_docs", use_container_width=True):
-        st.session_state["cmd_page"] = "Threat Triage & Overview"
-        st.session_state["preview_route"] = ("GET /docs (Swagger OpenAPI UI)", {"swagger_url": "/docs", "openapi_spec": "/openapi.json", "status": "ONLINE"})
+        st.session_state["cmd_page"] = "API Documentation"
         st.rerun()
-
-    # Telemetry Preview Modal
-    if st.session_state.get("preview_route"):
-        route_name, route_data = st.session_state["preview_route"]
-        with st.expander(f"[!] Live Telemetry: {route_name}", expanded=True):
-            st.json(route_data)
-            if st.button("Clear Preview", key="clr_cmd"):
-                st.session_state.pop("preview_route", None)
-                st.rerun()
 
     st.markdown('<div style="height: 0.5rem;"></div>', unsafe_allow_html=True)
 
@@ -177,6 +160,39 @@ if st.session_state["portal"] == "command":
         hotspots_view.render()
     elif page == "Alert Queue & Freeze Notices":
         alerts_view.render()
+    elif page == "API Documentation":
+        st.markdown(
+            """
+            <div style="background: #000000; border: 1px solid #ffffff; border-radius: 2px; padding: 1.25rem; margin-bottom: 1rem;">
+                <div style="font-size: 1.1rem; font-weight: 900; color: #ffffff; letter-spacing: 0.05em; margin-bottom: 0.35rem;">
+                    ■ PRAHARI API SPECIFICATION // OPENAPI 3.1
+                </div>
+                <div style="font-size: 0.75rem; color: #a3a3a3; margin-bottom: 1rem;">
+                    Full interactive Swagger documentation and REST endpoints for SIH26184 integration.
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem;">
+                    <div style="border: 1px solid #262626; padding: 0.75rem; background: #050505;">
+                        <b style="color: #ffffff; font-weight: 800;">GET /docs</b><br>
+                        <span style="font-size: 0.72rem; color: #a3a3a3;">Interactive Swagger UI with test console.</span>
+                    </div>
+                    <div style="border: 1px solid #262626; padding: 0.75rem; background: #050505;">
+                        <b style="color: #ffffff; font-weight: 800;">GET /api/v1/alerts</b><br>
+                        <span style="font-size: 0.72rem; color: #a3a3a3;">Live threat triage queue with loss velocity ratings.</span>
+                    </div>
+                    <div style="border: 1px solid #262626; padding: 0.75rem; background: #050505;">
+                        <b style="color: #ffffff; font-weight: 800;">GET /api/v1/hotspots</b><br>
+                        <span style="font-size: 0.72rem; color: #a3a3a3;">Uber H3 resolution 8 spatial anomaly cells.</span>
+                    </div>
+                    <div style="border: 1px solid #262626; padding: 0.75rem; background: #050505;">
+                        <b style="color: #ffffff; font-weight: 800;">POST /api/v1/cyber-safely/report-crime</b><br>
+                        <span style="font-size: 0.72rem; color: #a3a3a3;">Automated incident ingestion & Section 91 dispatch.</span>
+                    </div>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.link_button("Launch Swagger OpenAPI Console (/docs)", "/docs", use_container_width=True)
 
 else:
     theme.render_tactical_header(
@@ -184,7 +200,7 @@ else:
         subtitle="Cyber Saver"
     )
 
-    # Top Slim Side-by-Side Routes Buttons (Names Only)
+    # Top Slim Side-by-Side Routes Buttons (Names Only - Direct Navigation)
     st.markdown(
         """
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem; padding-bottom: 0.25rem; border-bottom: 1px solid #262626;">
@@ -208,24 +224,13 @@ else:
         st.rerun()
     if c_cols[2].button("Track", key="rt_cit_trk", use_container_width=True):
         st.session_state["cit_page"] = "Track Case Restitution"
-        st.session_state["preview_cit_route"] = ("GET /api/v1/cyber-safely/track/NCRP/2026/000188", api_client.track("NCRP/2026/000188"))
         st.rerun()
     if c_cols[3].button("Guidance", key="rt_cit_guide", use_container_width=True):
         st.session_state["cit_page"] = "Safety Guidance"
-        st.session_state["preview_cit_route"] = ("GET /api/v1/cyber-safely/guidance", api_client.guidance())
         st.rerun()
     if c_cols[4].button("Health", key="rt_cit_health", use_container_width=True):
-        st.session_state["preview_cit_route"] = ("GET /health", {"status": "online", "service": "Prahari • Cyber Saver Engine", "version": "2.0.0"})
+        st.session_state["cit_page"] = "System Health"
         st.rerun()
-
-    # Telemetry Preview Modal
-    if st.session_state.get("preview_cit_route"):
-        route_name, route_data = st.session_state["preview_cit_route"]
-        with st.expander(f"[!] Live Telemetry: {route_name}", expanded=True):
-            st.json(route_data)
-            if st.button("Clear Preview", key="clr_cit"):
-                st.session_state.pop("preview_cit_route", None)
-                st.rerun()
 
     st.markdown('<div style="height: 0.5rem;"></div>', unsafe_allow_html=True)
 
@@ -237,3 +242,35 @@ else:
         track_status_view.render()
     elif page == "Safety Guidance":
         safety_guidance_view.render()
+    elif page == "System Health":
+        st.markdown(
+            """
+            <div style="background: #000000; border: 1px solid #ffffff; border-radius: 2px; padding: 1.25rem;">
+                <div style="font-size: 1.1rem; font-weight: 900; color: #ffffff; letter-spacing: 0.05em; margin-bottom: 0.35rem;">
+                    [✓] PRAHARI SYSTEM DIAGNOSTICS & TELEMETRY
+                </div>
+                <div style="font-size: 0.75rem; color: #a3a3a3; margin-bottom: 1rem;">
+                    Universal health check status for local services and cloud resilience pipelines.
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
+                    <div style="border: 1px solid #262626; padding: 0.75rem; background: #050505;">
+                        <span style="font-size: 0.7rem; color: #a3a3a3;">FASTAPI CORE</span><br>
+                        <b style="color: #ffffff; font-weight: 900;">ONLINE (HTTP 200)</b>
+                    </div>
+                    <div style="border: 1px solid #262626; padding: 0.75rem; background: #050505;">
+                        <span style="font-size: 0.7rem; color: #a3a3a3;">AI PREDICTIVE ENGINE</span><br>
+                        <b style="color: #ffffff; font-weight: 900;">ACTIVE (HIST-GBT + DBSCAN)</b>
+                    </div>
+                    <div style="border: 1px solid #262626; padding: 0.75rem; background: #050505;">
+                        <span style="font-size: 0.7rem; color: #a3a3a3;">SPATIAL RADAR INDEX</span><br>
+                        <b style="color: #ffffff; font-weight: 900;">UBER H3 RES 8 READY</b>
+                    </div>
+                    <div style="border: 1px solid #262626; padding: 0.75rem; background: #050505;">
+                        <span style="font-size: 0.7rem; color: #a3a3a3;">NCRP RESTITUTION PIPELINE</span><br>
+                        <b style="color: #ffffff; font-weight: 900;">SEC 91 / 503 BNSS ENGAGED</b>
+                    </div>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )

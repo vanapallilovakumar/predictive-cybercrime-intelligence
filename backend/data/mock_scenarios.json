@@ -520,5 +520,49 @@
       "timestamp": "6h ago",
       "description": "Rapid succession attempts in Jamtara and Deoghar within 45 minutes"
     }
+  ],
+  "complaints": [
+    {
+      "reference_no": "NCRP/2026/000188",
+      "scenario_id": "scenario_a",
+      "typology": "OTP fraud",
+      "loss_amount_inr": 85000.0,
+      "victim_name": "Ramesh Kumar",
+      "victim_email": "citizen@example.com",
+      "victim_bank_name": "State Bank of India",
+      "victim_account_no": "XXXXXX4412",
+      "victim_district": "Ranchi",
+      "beneficiary_bank": "Bank of India",
+      "beneficiary_account": "9876543210@upi",
+      "reported_district": "Deoghar",
+      "tracking_status": "Investigation Active",
+      "assigned_officer": "Inspector Vikram (State Cyber Crime PS)",
+      "status_notes": "Immediate debit freeze advisory dispatched to Bank of India. Interdiction active at Deoghar corridor.",
+      "status_step": 2,
+      "incident_timestamp": "2026-09-13T10:30:00Z",
+      "filing_date": "13 Sep 2026 10:45 IST",
+      "evidence_urls": []
+    },
+    {
+      "reference_no": "NCRP/2026/000189",
+      "scenario_id": "scenario_a",
+      "typology": "Digital arrest",
+      "loss_amount_inr": 240000.0,
+      "victim_name": "Sunita Verma",
+      "victim_email": "sunita.v@example.com",
+      "victim_bank_name": "Punjab National Bank",
+      "victim_account_no": "XXXXXX8901",
+      "victim_district": "Dhanbad",
+      "beneficiary_bank": "Bandhan Bank",
+      "beneficiary_account": "6102938475",
+      "reported_district": "Jamtara",
+      "tracking_status": "Criminal Traced",
+      "assigned_officer": "Inspector Vikram (State Cyber Crime PS)",
+      "status_notes": "Mule account network frozen under Section 91 BNSS. Restitution proceedings underway.",
+      "status_step": 3,
+      "incident_timestamp": "2026-09-13T08:15:00Z",
+      "filing_date": "13 Sep 2026 08:30 IST",
+      "evidence_urls": []
+    }
   ]
 }
