@@ -13,24 +13,24 @@ def render() -> None:
         logo_html = theme.get_logo_img(48)
         st.markdown(
             f"""
-            <div style="background: #131824; border: 1px solid #222c3d; border-radius: 8px; padding: 1.75rem 2rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45); position: relative; overflow: hidden;">
-                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #e11d48, #f43f5e, #ea580c);"></div>
+            <div style="background: #060911; border: 1px solid #1b2536; border-radius: 2px; padding: 1.75rem 2rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #00f0ff, #ff9900, #00f0ff);"></div>
                 <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.35rem;">
                     {logo_html}
                     <div>
-                        <div style="font-weight: 800; font-size: 1.35rem; letter-spacing: 0.05em; color: #f8fafc; line-height: 1.1;">
+                        <div style="font-weight: 800; font-size: 1.35rem; letter-spacing: 0.08em; color: #ffffff; line-height: 1.1;">
                             PRAHARI
                         </div>
-                        <div style="font-size: 0.7rem; color: #e11d48; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">
+                        <div style="font-size: 0.7rem; color: #00f0ff; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
                             Cyber Saver • Gateway
                         </div>
                     </div>
                 </div>
-                <div style="font-size: 0.78rem; color: #8b949e; margin-bottom: 1.25rem;">
+                <div style="font-size: 0.78rem; color: #8b9cb0; margin-bottom: 1.25rem;">
                     Universal Authenticator • SIH26184 Citizen & Police Defense Grid
                 </div>
-                <div style="background: rgba(225, 29, 72, 0.08); border: 1px solid rgba(225, 29, 72, 0.35); border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.76rem; color: #fecdd3; font-family: 'Electrolize', sans-serif; margin-bottom: 1.25rem;">
-                    ⚡ DEMO ACCESS: Any email accepted. Use bypass code <b>123456</b>
+                <div style="background: rgba(0, 240, 255, 0.06); border: 1px solid rgba(0, 240, 255, 0.35); border-radius: 2px; padding: 0.75rem 1rem; font-size: 0.76rem; color: #a5f3fc; font-family: 'Electrolize', sans-serif; margin-bottom: 1.25rem;">
+                    ■ DEMO ACCESS: Any email accepted. Use bypass code <b>123456</b>
                 </div>
             """,
             unsafe_allow_html=True,

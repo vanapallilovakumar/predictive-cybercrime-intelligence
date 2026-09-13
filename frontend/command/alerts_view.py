@@ -11,14 +11,14 @@ def render() -> None:
         """
         <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.25rem;">
             <div>
-                <div style="font-size: 1.15rem; font-weight: 800; letter-spacing: 0.04em; color: #f8fafc;">
-                    RESPONSE ACTION QUEUE • IMMINENT CASH-OUT TRIAGE
+                <div style="font-size: 1.1rem; font-weight: 800; letter-spacing: 0.06em; color: #ffffff;">
+                    ■ RESPONSE ACTION QUEUE // CASH-OUT TRIAGE
                 </div>
-                <div style="font-size: 0.76rem; color: #8b949e; margin-top: 0.2rem;">
-                    Priority-ranked bank corridors flagging imminent siphon-off at CSPs and ATMs.
+                <div style="font-size: 0.74rem; color: #8b9cb0; margin-top: 0.2rem;">
+                    Priority-ranked interdiction corridor flagging imminent siphon-off at CSPs and ATMs.
                 </div>
             </div>
-            <div style="font-family: 'Electrolize', sans-serif; font-size: 0.75rem; color: #e11d48; font-weight: 700; background: rgba(225, 29, 72, 0.1); border: 1px solid #e11d48; padding: 0.35rem 0.75rem; border-radius: 4px;">
+            <div style="font-family: 'Electrolize', sans-serif; font-size: 0.72rem; color: #00f0ff; font-weight: 700; background: rgba(0, 240, 255, 0.08); border: 1px solid #00f0ff; padding: 0.3rem 0.7rem; border-radius: 2px;">
                 LEGAL POWERS: SEC 91 BNSS / CRPC
             </div>
         </div>
@@ -42,34 +42,34 @@ def render() -> None:
         with st.expander(title, expanded=(status == "OPEN")):
             st.markdown(
                 f"""
-                <div style="background: #131824; border: 1px solid #222c3d; border-radius: 6px; padding: 1rem; margin-bottom: 0.75rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+                <div style="background: #060911; border: 1px solid #1b2536; border-radius: 2px; padding: 0.85rem; margin-bottom: 0.65rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                         <span class="status-badge {status_class}">{status}</span>
-                        <span style="font-family: 'Electrolize', sans-serif; font-size: 0.75rem; color: #e11d48; font-weight: 700;">
-                            {alert.get('priority')} PRIORITY ({prob}% CONFIDENCE)
+                        <span style="font-family: 'Electrolize', sans-serif; font-size: 0.72rem; color: #ff9900; font-weight: 700;">
+                            ■ {alert.get('priority')} PRIORITY ({prob}% CONFIDENCE)
                         </span>
                     </div>
-                    <div style="margin-bottom: 0.75rem;">
-                        <div style="font-size: 0.7rem; color: #8b949e; font-family: 'Electrolize', sans-serif; text-transform: uppercase;">
+                    <div style="margin-bottom: 0.65rem;">
+                        <div style="font-size: 0.68rem; color: #8b9cb0; font-family: 'Electrolize', sans-serif; text-transform: uppercase;">
                             Threat Velocity Meter
                         </div>
-                        <div class="threat-bar-container" style="height: 12px; margin-top: 0.25rem;">
+                        <div class="threat-bar-container" style="height: 10px; margin-top: 0.2rem;">
                             <div class="threat-bar-fill" style="width: {prob}%;"></div>
                         </div>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.82rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; font-size: 0.8rem;">
                         <div>
-                            <span style="color: #8b949e;">Target Node:</span> <b>{alert.get('node_name')}</b><br>
-                            <span style="color: #8b949e;">Bank:</span> <b>{alert.get('bank_name')}</b><br>
-                            <span style="color: #8b949e;">Linked NCRP Ref:</span> <code style="color: #60a5fa;">{alert.get('complaint_ref')}</code>
+                            <span style="color: #8b9cb0;">Target Node:</span> <b style="color: #ffffff;">{alert.get('node_name')}</b><br>
+                            <span style="color: #8b9cb0;">Bank:</span> <b style="color: #ffffff;">{alert.get('bank_name')}</b><br>
+                            <span style="color: #8b9cb0;">Linked NCRP Ref:</span> <code style="color: #00f0ff;">{alert.get('complaint_ref')}</code>
                         </div>
                         <div>
-                            <span style="color: #8b949e;">Beneficiary Bank:</span> <b>{alert.get('beneficiary_bank')}</b><br>
-                            <span style="color: #8b949e;">Beneficiary Account:</span> <code style="color: #f43f5e;">{alert.get('beneficiary_account')}</code><br>
-                            <span style="color: #8b949e;">Amount at Risk:</span> <b style="color: #e11d48;">₹{loss:,.0f}</b>
+                            <span style="color: #8b9cb0;">Beneficiary Bank:</span> <b style="color: #ffffff;">{alert.get('beneficiary_bank')}</b><br>
+                            <span style="color: #8b9cb0;">Beneficiary Account:</span> <code style="color: #ff9900;">{alert.get('beneficiary_account')}</code><br>
+                            <span style="color: #8b9cb0;">Amount at Risk:</span> <b style="color: #00f0ff;">₹{loss:,.0f}</b>
                         </div>
                     </div>
-                    <div style="margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid #222c3d; font-size: 0.78rem; color: #cbd5e1;">
+                    <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #1b2536; font-size: 0.76rem; color: #94a3b8;">
                         <b>Detection Logic:</b> {alert.get('reason_text')}
                     </div>
                 </div>
@@ -95,11 +95,11 @@ def render() -> None:
             if advisory:
                 st.markdown(
                     f"""
-                    <div style="background: rgba(225, 29, 72, 0.08); border: 1px solid #e11d48; border-radius: 6px; padding: 0.75rem; margin-top: 0.75rem;">
-                        <div style="font-size: 0.8rem; font-weight: 700; color: #fecdd3; margin-bottom: 0.35rem;">
-                            OFFICIAL LEGAL ADVISORY: {advisory.get('notice_ref')}
+                    <div style="background: rgba(0, 240, 255, 0.06); border: 1px solid #00f0ff; border-radius: 2px; padding: 0.75rem; margin-top: 0.65rem;">
+                        <div style="font-size: 0.78rem; font-weight: 700; color: #00f0ff; margin-bottom: 0.3rem;">
+                            ■ OFFICIAL LEGAL ADVISORY: {advisory.get('notice_ref')}
                         </div>
-                        <div style="font-size: 0.74rem; color: #8b949e; margin-bottom: 0.5rem;">
+                        <div style="font-size: 0.72rem; color: #8b9cb0; margin-bottom: 0.4rem;">
                             Dispatched to Nodal Fraud Desk: {advisory.get('recipient_bank')} • Account: {advisory.get('target_account')}
                         </div>
                     </div>
