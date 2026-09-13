@@ -1,0 +1,524 @@
+{
+  "active_scenario_id": "scenario_a",
+  "scenarios": [
+    {
+      "id": "scenario_a",
+      "name": "Active Mule Surge",
+      "description": "High-intensity ATM cash-outs across Jamtara-Deoghar corridor",
+      "is_active": true
+    },
+    {
+      "id": "scenario_b",
+      "name": "Digital Arrest Corridor",
+      "description": "Targeted extortion burst in Nuh-Bharatpur",
+      "is_active": false
+    },
+    {
+      "id": "scenario_c",
+      "name": "Baseline Calm State",
+      "description": "Normal low-velocity complaints with low forecast probabilities",
+      "is_active": false
+    }
+  ],
+  "cashout_nodes": [
+    {
+      "id": "node-deo-01",
+      "node_code": "NODE-DEO-01",
+      "name": "Deoghar Bus Stand ATM",
+      "bank_name": "Bank of India",
+      "district": "Deoghar",
+      "state": "Jharkhand",
+      "latitude": 24.4854,
+      "longitude": 86.6978,
+      "h3_res7": "876014524ffffff",
+      "h3_res8": "8860145241fffff",
+      "is_monitored": true
+    },
+    {
+      "id": "node-jam-01",
+      "node_code": "NODE-JAM-01",
+      "name": "Jamtara Main Road ATM Cluster",
+      "bank_name": "Bank of India",
+      "district": "Jamtara",
+      "state": "Jharkhand",
+      "latitude": 23.962,
+      "longitude": 86.802,
+      "h3_res7": "87601440affffff",
+      "h3_res8": "88601440a3fffff",
+      "is_monitored": true
+    },
+    {
+      "id": "node-jam-02",
+      "node_code": "NODE-JAM-02",
+      "name": "Karmatanr Bazaar Kiosk",
+      "bank_name": "State Bank of India",
+      "district": "Jamtara",
+      "state": "Jharkhand",
+      "latitude": 24.088,
+      "longitude": 86.762,
+      "h3_res7": "876014413ffffff",
+      "h3_res8": "8860144135fffff",
+      "is_monitored": true
+    },
+    {
+      "id": "node-nuh-01",
+      "node_code": "NODE-NUH-01",
+      "name": "Nuh Tauru Chowk ATM",
+      "bank_name": "Punjab National Bank",
+      "district": "Nuh",
+      "state": "Haryana",
+      "latitude": 28.106,
+      "longitude": 77.012,
+      "h3_res7": "872f056d6ffffff",
+      "h3_res8": "882f056d67fffff",
+      "is_monitored": true
+    },
+    {
+      "id": "node-bha-01",
+      "node_code": "NODE-BHA-01",
+      "name": "Bharatpur Station Road ATM",
+      "bank_name": "Bank of Baroda",
+      "district": "Bharatpur",
+      "state": "Rajasthan",
+      "latitude": 27.217,
+      "longitude": 77.4895,
+      "h3_res7": "872f0535affffff",
+      "h3_res8": "882f0535a1fffff",
+      "is_monitored": true
+    },
+    {
+      "id": "node-gir-01",
+      "node_code": "NODE-GIR-01",
+      "name": "Giridih Station Road Branch",
+      "bank_name": "Bandhan Bank",
+      "district": "Giridih",
+      "state": "Jharkhand",
+      "latitude": 24.184,
+      "longitude": 86.305,
+      "h3_res7": "876014695ffffff",
+      "h3_res8": "8860146959fffff",
+      "is_monitored": true
+    }
+  ],
+  "complaints": [
+    {
+      "reference_no": "NCRP/2026/000181",
+      "scenario_id": "scenario_a",
+      "typology": "UPI fraud",
+      "loss_amount_inr": 148000.0,
+      "victim_name": "Rohan Sharma",
+      "victim_email": "rohan@example.com",
+      "victim_bank_name": "State Bank of India",
+      "victim_account_no": "XXXXXX1290",
+      "victim_district": "Pune",
+      "beneficiary_bank": "Bank of India",
+      "beneficiary_account": "XXXXXX4921",
+      "reported_district": "Deoghar",
+      "tracking_status": "Investigation Active",
+      "assigned_officer": "Inspector Vikram (State Cyber Crime Police Station)",
+      "status_notes": "Patrol alerted to Deoghar Bus Stand ATM; Section 91 BNSS Bank Freeze Notice issued to Bank of India.",
+      "status_step": 2,
+      "incident_timestamp": "2026-09-12T17:30:00Z",
+      "filing_date": "2026-09-12 18:05 IST",
+      "evidence_urls": []
+    },
+    {
+      "reference_no": "NCRP/2026/000182",
+      "scenario_id": "scenario_a",
+      "typology": "Investment scam",
+      "loss_amount_inr": 620000.0,
+      "victim_name": "George Mathew",
+      "victim_email": "george.m@gmail.com",
+      "victim_bank_name": "Federal Bank",
+      "victim_account_no": "XXXXXX6610",
+      "victim_district": "Ernakulam",
+      "beneficiary_bank": "IDFC First",
+      "beneficiary_account": "XXXXXX9820",
+      "reported_district": "Jamtara",
+      "tracking_status": "Investigation Active",
+      "assigned_officer": "Inspector Vikram (Cyber Cell)",
+      "status_notes": "Coordinated mule hopping pattern flagged in Jamtara Main Road.",
+      "status_step": 2,
+      "incident_timestamp": "2026-09-12T14:20:00Z",
+      "filing_date": "2026-09-12 15:00 IST",
+      "evidence_urls": []
+    },
+    {
+      "reference_no": "NCRP/2026/000183",
+      "scenario_id": "scenario_a",
+      "typology": "Digital arrest",
+      "loss_amount_inr": 255000.0,
+      "victim_name": "Anil Verma",
+      "victim_email": "anil.verma@yahoo.com",
+      "victim_bank_name": "ICICI Bank",
+      "victim_account_no": "XXXXXX9012",
+      "victim_district": "Lucknow",
+      "beneficiary_bank": "Punjab National Bank",
+      "beneficiary_account": "XXXXXX1084",
+      "reported_district": "Nuh",
+      "tracking_status": "Under Review",
+      "assigned_officer": "Inspector Vikram (Cyber Cell)",
+      "status_notes": "Case under AI spatio-temporal correlation.",
+      "status_step": 1,
+      "incident_timestamp": "2026-09-13T09:15:00Z",
+      "filing_date": "2026-09-13 10:00 IST",
+      "evidence_urls": []
+    },
+    {
+      "reference_no": "NCRP/2026/000184",
+      "scenario_id": "scenario_a",
+      "typology": "Loan app extortion",
+      "loss_amount_inr": 92000.0,
+      "victim_name": "Mahesh Shinde",
+      "victim_email": "mahesh.s@rediffmail.com",
+      "victim_bank_name": "Bank of Maharashtra",
+      "victim_account_no": "XXXXXX5521",
+      "victim_district": "Nagpur",
+      "beneficiary_bank": "Yes Bank",
+      "beneficiary_account": "XXXXXX6643",
+      "reported_district": "Mathura",
+      "tracking_status": "Returned to Victim",
+      "assigned_officer": "Inspector Vikram (Cyber Cell)",
+      "status_notes": "Beneficiary debits frozen and \u20b992,000 restitution re-credited to victim account under Sec 503 BNSS.",
+      "status_step": 4,
+      "incident_timestamp": "2026-09-11T12:00:00Z",
+      "filing_date": "2026-09-11 12:45 IST",
+      "evidence_urls": []
+    },
+    {
+      "reference_no": "NCRP/2026/000185",
+      "scenario_id": "scenario_a",
+      "typology": "Job fraud",
+      "loss_amount_inr": 175000.0,
+      "victim_name": "Sunita Sen",
+      "victim_email": "sunita.sen@gmail.com",
+      "victim_bank_name": "HDFC Bank",
+      "victim_account_no": "XXXXXX4512",
+      "victim_district": "Kolkata",
+      "beneficiary_bank": "Bandhan Bank",
+      "beneficiary_account": "XXXXXX7812",
+      "reported_district": "Giridih",
+      "tracking_status": "Investigation Active",
+      "assigned_officer": "Inspector Vikram (Cyber Cell)",
+      "status_notes": "Patrol team alerted to Giridih Station Road ATM cluster.",
+      "status_step": 2,
+      "incident_timestamp": "2026-09-12T16:00:00Z",
+      "filing_date": "2026-09-12 16:30 IST",
+      "evidence_urls": []
+    },
+    {
+      "reference_no": "NCRP/2026/000186",
+      "scenario_id": "scenario_a",
+      "typology": "OTP fraud",
+      "loss_amount_inr": 66000.0,
+      "victim_name": "Kavita Joshi",
+      "victim_email": "kavita.j@outlook.com",
+      "victim_bank_name": "Axis Bank",
+      "victim_account_no": "XXXXXX2389",
+      "victim_district": "Jaipur",
+      "beneficiary_bank": "Bank of Baroda",
+      "beneficiary_account": "XXXXXX3391",
+      "reported_district": "Bharatpur",
+      "tracking_status": "Under Review",
+      "assigned_officer": "Inspector Vikram (Cyber Cell)",
+      "status_notes": "Awaiting bank nodal confirmation.",
+      "status_step": 1,
+      "incident_timestamp": "2026-09-13T08:30:00Z",
+      "filing_date": "2026-09-13 09:10 IST",
+      "evidence_urls": []
+    }
+  ],
+  "spatial_forecasts": [
+    {
+      "scenario_id": "scenario_a",
+      "h3_index": "8860145241fffff",
+      "district": "Deoghar",
+      "center_lat": 24.4854,
+      "center_lon": 86.6978,
+      "probability_pct": 77,
+      "risk_tier": "HIGH",
+      "reason_code": "LATE_NIGHT_FREEZE_DODGE",
+      "reason_text": "Incident occurred in the late-night window used to dodge bank freeze desks",
+      "total_loss_at_risk_inr": 148000.0,
+      "linked_complaints": [
+        "NCRP/2026/000181"
+      ],
+      "atm_nodes": [
+        "Deoghar Bus Stand ATM (Bank of India)"
+      ]
+    },
+    {
+      "scenario_id": "scenario_a",
+      "h3_index": "88601440a3fffff",
+      "district": "Jamtara",
+      "center_lat": 23.962,
+      "center_lon": 86.802,
+      "probability_pct": 71,
+      "risk_tier": "HIGH",
+      "reason_code": "RAPID_MULE_HOPPING",
+      "reason_text": "Coordinated cash-out cluster detected across multiple terminals",
+      "total_loss_at_risk_inr": 620000.0,
+      "linked_complaints": [
+        "NCRP/2026/000182"
+      ],
+      "atm_nodes": [
+        "Jamtara Main Road ATM Cluster (Bank of India)"
+      ]
+    },
+    {
+      "scenario_id": "scenario_a",
+      "h3_index": "882f056d67fffff",
+      "district": "Nuh",
+      "center_lat": 28.106,
+      "center_lon": 77.012,
+      "probability_pct": 71,
+      "risk_tier": "HIGH",
+      "reason_code": "HIGH_LOSS_VELOCITY_SPIKE",
+      "reason_text": "High-loss extortion withdrawal window open",
+      "total_loss_at_risk_inr": 255000.0,
+      "linked_complaints": [
+        "NCRP/2026/000183"
+      ],
+      "atm_nodes": [
+        "Nuh Tauru Chowk ATM (Punjab National Bank)"
+      ]
+    },
+    {
+      "scenario_id": "scenario_a",
+      "h3_index": "882f0535a1fffff",
+      "district": "Bharatpur",
+      "center_lat": 27.217,
+      "center_lon": 77.4895,
+      "probability_pct": 66,
+      "risk_tier": "WATCH",
+      "reason_code": "PREDICTED_SPILLOVER",
+      "reason_text": "Secondary mule hopping corridor anticipated",
+      "total_loss_at_risk_inr": 66000.0,
+      "linked_complaints": [
+        "NCRP/2026/000186"
+      ],
+      "atm_nodes": [
+        "Bharatpur Station Road ATM (Bank of Baroda)"
+      ]
+    },
+    {
+      "scenario_id": "scenario_a",
+      "h3_index": "882f05362bfffff",
+      "district": "Mathura",
+      "center_lat": 27.4924,
+      "center_lon": 77.6737,
+      "probability_pct": 41,
+      "risk_tier": "WATCH",
+      "reason_code": "ISOLATED_ATM_SURGE",
+      "reason_text": "Moderate velocity withdrawal pattern",
+      "total_loss_at_risk_inr": 92000.0,
+      "linked_complaints": [
+        "NCRP/2026/000184"
+      ],
+      "atm_nodes": [
+        "Mathura Highway Kiosk"
+      ]
+    },
+    {
+      "scenario_id": "scenario_a",
+      "h3_index": "8860146959fffff",
+      "district": "Giridih",
+      "center_lat": 24.184,
+      "center_lon": 86.305,
+      "probability_pct": 39,
+      "risk_tier": "NORMAL",
+      "reason_code": "ISOLATED_ATM_SURGE",
+      "reason_text": "Moderate probability cash-out node opening",
+      "total_loss_at_risk_inr": 175000.0,
+      "linked_complaints": [
+        "NCRP/2026/000185"
+      ],
+      "atm_nodes": [
+        "Giridih Station Road Branch (Bandhan Bank)"
+      ]
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-001",
+      "alert_code": "ALT-2026-001",
+      "scenario_id": "scenario_a",
+      "node_name": "Deoghar Bus Stand ATM",
+      "bank_name": "Bank of India",
+      "district": "Deoghar",
+      "complaint_ref": "NCRP/2026/000181",
+      "priority": "HIGH",
+      "probability_pct": 77,
+      "reason_code": "LATE_NIGHT_FREEZE_DODGE",
+      "reason_text": "Incident occurred in the late-night window used to dodge bank freeze desks | Officer Note: integration test",
+      "status": "OPEN",
+      "beneficiary_bank": "Bank of India",
+      "beneficiary_account": "XXXXXX4921",
+      "loss_amount_inr": 148000.0,
+      "created_at": "2026-09-12 18:30 IST"
+    },
+    {
+      "id": "alert-002",
+      "alert_code": "ALT-2026-002",
+      "scenario_id": "scenario_a",
+      "node_name": "Nuh Tauru Chowk ATM",
+      "bank_name": "Punjab National Bank",
+      "district": "Nuh",
+      "complaint_ref": "NCRP/2026/000183",
+      "priority": "HIGH",
+      "probability_pct": 71,
+      "reason_code": "HIGH_LOSS_VELOCITY_SPIKE",
+      "reason_text": "High-velocity cash-out window active dodging freeze desk",
+      "status": "OPEN",
+      "beneficiary_bank": "Punjab National Bank",
+      "beneficiary_account": "XXXXXX1084",
+      "loss_amount_inr": 255000.0,
+      "created_at": "2026-09-13 10:15 IST"
+    },
+    {
+      "id": "alert-003",
+      "alert_code": "ALT-2026-003",
+      "scenario_id": "scenario_a",
+      "node_name": "Jamtara Main Road ATM Cluster",
+      "bank_name": "Bank of India",
+      "district": "Jamtara",
+      "complaint_ref": "NCRP/2026/000182",
+      "priority": "HIGH",
+      "probability_pct": 71,
+      "reason_code": "RAPID_MULE_HOPPING",
+      "reason_text": "Coordinated mule ring withdrawing across Jamtara Main Road",
+      "status": "OPEN",
+      "beneficiary_bank": "IDFC First",
+      "beneficiary_account": "XXXXXX9820",
+      "loss_amount_inr": 620000.0,
+      "created_at": "2026-09-12 15:10 IST"
+    },
+    {
+      "id": "alert-004",
+      "alert_code": "ALT-2026-004",
+      "scenario_id": "scenario_a",
+      "node_name": "Bharatpur Station Road ATM",
+      "bank_name": "Bank of Baroda",
+      "district": "Bharatpur",
+      "complaint_ref": "NCRP/2026/000186",
+      "priority": "WATCH",
+      "probability_pct": 66,
+      "reason_code": "PREDICTED_SPILLOVER",
+      "reason_text": "Secondary mule hopping corridor anticipated",
+      "status": "OPEN",
+      "beneficiary_bank": "Bank of Baroda",
+      "beneficiary_account": "XXXXXX3391",
+      "loss_amount_inr": 66000.0,
+      "created_at": "2026-09-13 09:30 IST"
+    },
+    {
+      "id": "alert-005",
+      "alert_code": "ALT-2026-005",
+      "scenario_id": "scenario_a",
+      "node_name": "Giridih Station Road Branch",
+      "bank_name": "Bandhan Bank",
+      "district": "Giridih",
+      "complaint_ref": "NCRP/2026/000185",
+      "priority": "WATCH",
+      "probability_pct": 39,
+      "reason_code": "ISOLATED_ATM_SURGE",
+      "reason_text": "Moderate probability cash-out node opening",
+      "status": "DISPATCHED",
+      "beneficiary_bank": "Bandhan Bank",
+      "beneficiary_account": "XXXXXX7812",
+      "loss_amount_inr": 175000.0,
+      "created_at": "2026-09-12 16:45 IST"
+    },
+    {
+      "id": "alert-006",
+      "alert_code": "ALT-2026-006",
+      "scenario_id": "scenario_a",
+      "node_name": "Karmatanr Bazaar Kiosk",
+      "bank_name": "State Bank of India",
+      "district": "Jamtara",
+      "complaint_ref": "NCRP/2026/000184",
+      "priority": "HIGH",
+      "probability_pct": 81,
+      "reason_code": "RAPID_MULE_HOPPING",
+      "reason_text": "Coordinated cash withdrawal prevented by rapid debit freeze",
+      "status": "RESOLVED",
+      "beneficiary_bank": "Yes Bank",
+      "beneficiary_account": "XXXXXX6643",
+      "loss_amount_inr": 92000.0,
+      "created_at": "2026-09-11 13:00 IST"
+    }
+  ],
+  "timing_pattern": [
+    {
+      "hour": "00h",
+      "cashouts": 2
+    },
+    {
+      "hour": "02h",
+      "cashouts": 2
+    },
+    {
+      "hour": "04h",
+      "cashouts": 2
+    },
+    {
+      "hour": "06h",
+      "cashouts": 0
+    },
+    {
+      "hour": "08h",
+      "cashouts": 0
+    },
+    {
+      "hour": "10h",
+      "cashouts": 0
+    },
+    {
+      "hour": "12h",
+      "cashouts": 1
+    },
+    {
+      "hour": "14h",
+      "cashouts": 0
+    },
+    {
+      "hour": "16h",
+      "cashouts": 0
+    },
+    {
+      "hour": "18h",
+      "cashouts": 0
+    },
+    {
+      "hour": "20h",
+      "cashouts": 0
+    },
+    {
+      "hour": "22h",
+      "cashouts": 1
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "anom-1",
+      "title": "Late-night window dodge",
+      "severity": "HIGH",
+      "timestamp": "2h ago",
+      "description": "Withdrawal requested between 02:00-04:00 AM dodging bank freeze desk"
+    },
+    {
+      "id": "anom-2",
+      "title": "Loss > 2.1x std dev",
+      "severity": "CRITICAL",
+      "timestamp": "4h ago",
+      "description": "\u20b96,20,000 lost in investment scam exceeding district average by 2.4x"
+    },
+    {
+      "id": "anom-3",
+      "title": "Inter-district mule hopping",
+      "severity": "MEDIUM",
+      "timestamp": "6h ago",
+      "description": "Rapid succession attempts in Jamtara and Deoghar within 45 minutes"
+    }
+  ]
+}
