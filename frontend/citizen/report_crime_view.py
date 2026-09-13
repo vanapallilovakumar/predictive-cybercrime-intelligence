@@ -12,10 +12,10 @@ def render() -> None:
     st.markdown(
         """
         <div style="margin-bottom: 1.25rem;">
-            <div style="font-size: 1.15rem; font-weight: 800; letter-spacing: 0.04em; color: #f8fafc;">
-                LODGE OFFICIAL CYBERCRIME COMPLAINT
+            <div style="font-size: 1.15rem; font-weight: 800; letter-spacing: 0.04em; color: #ffffff;">
+                ■ LODGE OFFICIAL CYBERCRIME COMPLAINT
             </div>
-            <div style="font-size: 0.76rem; color: #8b949e; margin-top: 0.2rem;">
+            <div style="font-size: 0.76rem; color: #a3a3a3; margin-top: 0.2rem;">
                 Golden Hour Immediate Debit Freeze & NCRP Portal Automated Integration.
             </div>
         </div>
@@ -27,7 +27,7 @@ def render() -> None:
 
     with st.form("complaint_form"):
         st.markdown(
-            '<div style="font-size: 0.85rem; font-weight: 700; color: #e11d48; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem;">1. Incident Details & Typology</div>',
+            '<div style="font-size: 0.82rem; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">■ 1. INCIDENT DETAILS & TYPOLOGY</div>',
             unsafe_allow_html=True,
         )
         c_typ, c_date, c_time = st.columns([2, 1, 1])
@@ -42,7 +42,7 @@ def render() -> None:
 
         st.markdown('<div style="height: 0.75rem;"></div>', unsafe_allow_html=True)
         st.markdown(
-            '<div style="font-size: 0.85rem; font-weight: 700; color: #e11d48; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem;">2. Financial Loss & Victim Account</div>',
+            '<div style="font-size: 0.82rem; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">■ 2. FINANCIAL LOSS & VICTIM ACCOUNT</div>',
             unsafe_allow_html=True,
         )
         c_amt, c_vname = st.columns(2)
@@ -61,7 +61,7 @@ def render() -> None:
 
         st.markdown('<div style="height: 0.75rem;"></div>', unsafe_allow_html=True)
         st.markdown(
-            '<div style="font-size: 0.85rem; font-weight: 700; color: #e11d48; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem;">3. Suspect Beneficiary Details (Crucial for Rapid Freeze)</div>',
+            '<div style="font-size: 0.82rem; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">■ 3. SUSPECT BENEFICIARY DETAILS (CRUCIAL FOR RAPID FREEZE)</div>',
             unsafe_allow_html=True,
         )
         c_bbank, c_bacc, c_rdist = st.columns(3)
@@ -74,7 +74,7 @@ def render() -> None:
 
         st.markdown('<div style="height: 0.75rem;"></div>', unsafe_allow_html=True)
         st.markdown(
-            '<div style="font-size: 0.85rem; font-weight: 700; color: #e11d48; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem;">4. Documentary Evidence</div>',
+            '<div style="font-size: 0.82rem; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">■ 4. DOCUMENTARY EVIDENCE</div>',
             unsafe_allow_html=True,
         )
         evidence = st.file_uploader("Upload Bank Transaction Screenshot / PDF Receipt", type=["png", "jpg", "jpeg", "pdf"])
@@ -112,12 +112,12 @@ def render() -> None:
         st.session_state["last_reference"] = ref
         st.markdown(
             f"""
-            <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid #10b981; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
-                <div style="font-size: 1.05rem; font-weight: 800; color: #10b981; margin-bottom: 0.25rem;">COMPLAINT LODGED SUCCESSFULLY</div>
-                <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.75rem;">
-                    NCRP Case Reference: <b style="font-family: 'Electrolize', sans-serif; color: #f8fafc;">{ref}</b>
+            <div style="background: #000000; border: 1px solid #ffffff; border-radius: 2px; padding: 1.25rem; margin-top: 1rem;">
+                <div style="font-size: 1.05rem; font-weight: 900; color: #ffffff; margin-bottom: 0.25rem;">[✓] COMPLAINT LODGED SUCCESSFULLY</div>
+                <div style="font-size: 0.85rem; color: #ffffff; margin-bottom: 0.75rem;">
+                    NCRP Case Reference: <b style="font-family: 'Electrolize', sans-serif; color: #ffffff; font-weight: 900;">{ref}</b>
                 </div>
-                <div style="font-size: 0.78rem; color: #a7f3d0;">
+                <div style="font-size: 0.78rem; color: #a3a3a3;">
                     Automated predictive intelligence has registered this cash-out corridor and notified field patrol nodes.
                 </div>
             </div>

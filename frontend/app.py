@@ -27,26 +27,26 @@ user = st.session_state.get("user", {})
 user_role = user.get("role", "citizen")
 
 with st.sidebar:
-    logo_sidebar = theme.get_logo_img(44)
+    logo_sidebar = theme.get_logo_img(40)
     st.markdown(
         f"""
-        <div style="padding: 0.5rem 0 1.25rem 0; border-bottom: 1px solid #1b2536; margin-bottom: 1.25rem;">
+        <div style="padding: 0.5rem 0 1.25rem 0; border-bottom: 1px solid #262626; margin-bottom: 1.25rem;">
             <div style="display: flex; align-items: center; gap: 0.75rem;">
                 {logo_sidebar}
                 <div>
-                    <div style="font-weight: 800; font-size: 1.25rem; letter-spacing: 0.08em; color: #ffffff; line-height: 1.1;">
+                    <div style="font-weight: 900; font-size: 1.2rem; letter-spacing: 0.08em; color: #ffffff; line-height: 1.1;">
                         PRAHARI
                     </div>
-                    <div style="font-size: 0.68rem; color: #00f0ff; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;">
+                    <div style="font-size: 0.68rem; color: #a3a3a3; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;">
                         Cyber Saver
                     </div>
                 </div>
             </div>
-            <div style="font-size: 0.72rem; color: #8b9cb0; margin-top: 0.6rem; font-family: 'Electrolize', sans-serif;">
-                OPERATOR: <span style="color: #ffffff; font-weight: 600;">{user.get("name", "Operator")}</span>
+            <div style="font-size: 0.72rem; color: #737373; margin-top: 0.6rem; font-family: 'Electrolize', sans-serif;">
+                OPERATOR: <span style="color: #ffffff; font-weight: 800;">{user.get("name", "Operator")}</span>
             </div>
-            <div style="font-size: 0.68rem; color: #00ff66; margin-top: 0.2rem; letter-spacing: 0.05em;">
-                ■ RADAR LINK ONLINE
+            <div style="font-size: 0.68rem; color: #ffffff; font-weight: 800; margin-top: 0.2rem; letter-spacing: 0.05em;">
+                [●] AUTHENTICATED
             </div>
         </div>
         """,
@@ -54,7 +54,7 @@ with st.sidebar:
     )
 
     st.markdown(
-        '<div style="font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; color: #00f0ff; text-transform: uppercase; margin-bottom: 0.5rem;">■ PORTAL MODE</div>',
+        '<div style="font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; color: #ffffff; text-transform: uppercase; margin-bottom: 0.5rem;">[ PORTAL MODE ]</div>',
         unsafe_allow_html=True,
     )
     portal = st.radio(
@@ -67,7 +67,7 @@ with st.sidebar:
 
     st.markdown('<div style="height: 1.25rem;"></div>', unsafe_allow_html=True)
     st.markdown(
-        '<div style="font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; color: #00f0ff; text-transform: uppercase; margin-bottom: 0.5rem;">■ TACTICAL QUEUE</div>',
+        '<div style="font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; color: #ffffff; text-transform: uppercase; margin-bottom: 0.5rem;">[ NAVIGATION ]</div>',
         unsafe_allow_html=True,
     )
 
@@ -108,14 +108,14 @@ if st.session_state["portal"] == "command":
         subtitle="Cyber Saver"
     )
 
-    # Top Slim Side-by-Side Routes Buttons (Only Names)
+    # Top Slim Side-by-Side Routes Buttons (Names Only)
     st.markdown(
         """
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem; padding-bottom: 0.25rem; border-bottom: 1px solid #1b2536;">
-            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; color: #00f0ff; text-transform: uppercase;">
-                ■ ROUTES // DISPATCH TELEMETRY
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem; padding-bottom: 0.25rem; border-bottom: 1px solid #262626;">
+            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; color: #ffffff; text-transform: uppercase;">
+                [ ROUTES ]
             </div>
-            <div style="font-size: 0.68rem; color: #8b9cb0; letter-spacing: 0.05em;">
+            <div style="font-size: 0.68rem; color: #737373; letter-spacing: 0.05em;">
                 PROTOCOL: MHA-SIH26184
             </div>
         </div>
@@ -160,10 +160,10 @@ if st.session_state["portal"] == "command":
         st.session_state["preview_route"] = ("GET /docs (Swagger OpenAPI UI)", {"swagger_url": "/docs", "openapi_spec": "/openapi.json", "status": "ONLINE"})
         st.rerun()
 
-    # Telemetry Preview Modal / Accordion
+    # Telemetry Preview Modal
     if st.session_state.get("preview_route"):
         route_name, route_data = st.session_state["preview_route"]
-        with st.expander(f"◈ Live Telemetry Response: {route_name}", expanded=True):
+        with st.expander(f"[!] Live Telemetry: {route_name}", expanded=True):
             st.json(route_data)
             if st.button("Clear Preview", key="clr_cmd"):
                 st.session_state.pop("preview_route", None)
@@ -184,14 +184,14 @@ else:
         subtitle="Cyber Saver"
     )
 
-    # Top Slim Side-by-Side Routes Buttons (Only Names)
+    # Top Slim Side-by-Side Routes Buttons (Names Only)
     st.markdown(
         """
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem; padding-bottom: 0.25rem; border-bottom: 1px solid #1b2536;">
-            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; color: #00f0ff; text-transform: uppercase;">
-                ■ ROUTES // CITIZEN PROTECTION
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem; padding-bottom: 0.25rem; border-bottom: 1px solid #262626;">
+            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; color: #ffffff; text-transform: uppercase;">
+                [ ROUTES ]
             </div>
-            <div style="font-size: 0.68rem; color: #8b9cb0; letter-spacing: 0.05em;">
+            <div style="font-size: 0.68rem; color: #737373; letter-spacing: 0.05em;">
                 DIAL: 1930
             </div>
         </div>
@@ -218,10 +218,10 @@ else:
         st.session_state["preview_cit_route"] = ("GET /health", {"status": "online", "service": "Prahari • Cyber Saver Engine", "version": "2.0.0"})
         st.rerun()
 
-    # Telemetry Preview Modal / Accordion
+    # Telemetry Preview Modal
     if st.session_state.get("preview_cit_route"):
         route_name, route_data = st.session_state["preview_cit_route"]
-        with st.expander(f"◈ Live Telemetry Response: {route_name}", expanded=True):
+        with st.expander(f"[!] Live Telemetry: {route_name}", expanded=True):
             st.json(route_data)
             if st.button("Clear Preview", key="clr_cit"):
                 st.session_state.pop("preview_cit_route", None)
