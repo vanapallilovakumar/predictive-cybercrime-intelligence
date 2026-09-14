@@ -13,7 +13,7 @@ BORDER = "#D6D3CB"
 BORDER_LIGHT = "#A8A49B"
 BORDER_WHITE = ACCENT
 
-TEXT_WHITE = "#2457A6"
+TEXT_WHITE = "#000000"
 TEXT_MUTED = "#59636E"
 TEXT_DIM = "#7B8490"
 
@@ -162,7 +162,7 @@ def apply_unified_theme(mode: str = "citizen") -> None:
             font-size: 3.5rem;
             font-weight: 900;
             letter-spacing: 0.35em;
-            color: rgba(255, 255, 255, 0.04);
+            color: rgba(0, 0, 0, 0.08);
             text-transform: uppercase;
             user-select: none;
             margin: -1rem 0 0.4rem 0;
