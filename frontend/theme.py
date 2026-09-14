@@ -3,7 +3,7 @@ from pathlib import Path
 import streamlit as st
 
 # Warm off-white UI with the requested blue accent.
-ACCENT = "#92A9E1"
+ACCENT = "#4F7FD9"
 BG_MAIN = "#F7F5EF"
 BG_PANEL = "#FFFEFA"
 BG_CARD = "#F1EFE8"
@@ -13,15 +13,15 @@ BORDER = "#D6D3CB"
 BORDER_LIGHT = "#A8A49B"
 BORDER_WHITE = ACCENT
 
-TEXT_WHITE = "#1F2933"
+TEXT_WHITE = "#2457A6"
 TEXT_MUTED = "#59636E"
 TEXT_DIM = "#7B8490"
 
-THREAT_NO_RISK = "#FFFFFF"
+THREAT_NO_RISK = "#92A9E1"
 THREAT_LOW = "#F2C94C"
 THREAT_HIGH = "#F2994A"
 THREAT_SEVERE = "#D64545"
-THREAT_URGENT = "#000000"
+THREAT_URGENT = "#2457A6"
 
 
 def threat_color(score_pct: float) -> str:
@@ -63,10 +63,37 @@ def apply_unified_theme(mode: str = "citizen") -> None:
             font-family: 'Electrolize', sans-serif !important;
         }}
 
+        /* Preserve Streamlit icon fonts; otherwise ligatures such as
+           keyboard_arrow_down are displayed as literal words. */
+        .material-icons,
+        .material-icons-outlined,
+        .material-symbols-rounded,
+        .material-symbols-outlined,
+        [data-testid="stIconMaterial"] {{
+            font-family: 'Material Symbols Rounded', 'Material Icons', sans-serif !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+        }}
+
         /* Warm off-white application background */
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], [data-testid="stMain"], .stApp, section.main {{
             background: {BG_MAIN} !important;
             background-color: {BG_MAIN} !important;
+            color: {TEXT_WHITE} !important;
+        }}
+
+        /* Titles and native widget labels use the blue accent on the light UI. */
+        [data-testid="stMarkdownContainer"] h1,
+        [data-testid="stMarkdownContainer"] h2,
+        [data-testid="stMarkdownContainer"] h3,
+        [data-testid="stMarkdownContainer"] h4,
+        [data-testid="stWidgetLabel"] p,
+        [data-testid="stWidgetLabel"] label,
+        [data-testid="stExpander"] summary {{
             color: {TEXT_WHITE} !important;
         }}
 
@@ -367,20 +394,22 @@ def apply_unified_theme(mode: str = "citizen") -> None:
         }}
 
         /* Keep legacy inline view markup aligned with the shared palette. */
-        *:not(.threat-bar-fill)[style*="background: #000000"],
-        *:not(.threat-bar-fill)[style*="background:#000000"] {{
+        *:not(.threat-bar-fill)[style*="background: #000000" i],
+        *:not(.threat-bar-fill)[style*="background:#000000" i] {{
             background: {BG_PANEL} !important;
         }}
-        [style*="background: #050505"],
-        [style*="background:#050505"] {{
+        [style*="background: #050505" i],
+        [style*="background:#050505" i] {{
             background: {BG_CARD} !important;
         }}
-        [style*="color: #ffffff"],
-        [style*="color:#ffffff"] {{
+        [style*="color: #ffffff" i],
+        [style*="color:#ffffff" i],
+        [style*="color: white" i] {{
             color: {TEXT_WHITE} !important;
         }}
-        [style*="border: 1px solid #ffffff"],
-        [style*="border:1px solid #ffffff"] {{
+        [style*="border: 1px solid #ffffff" i],
+        [style*="border:1px solid #ffffff" i],
+        [style*="border: 1px solid white" i] {{
             border-color: {ACCENT} !important;
         }}
         </style>
